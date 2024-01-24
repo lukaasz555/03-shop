@@ -3,24 +3,35 @@ nav {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 	padding-bottom: 0.5em;
 	margin-bottom: 1em;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 ul {
 	display: flex;
+	justify-content: flex-start;
+	column-gap: 10px;
 }
 
 li {
 	list-style: none;
-	margin: 0 1.5em;
-	padding: 0.25em 0.5em;
 }
 
 a {
 	color: #fff;
 	text-decoration: none;
 	transition: color 0.15s;
+	padding: 0.25em 0.5em;
+	display: inline-block;
 }
 
 a:hover {
 	color: rgba(255, 255, 255, 0.4);
+}
+
+div.cart {
+	padding: 0 0.5em;
+	border: 1px solid red;
 }

@@ -11,6 +11,7 @@ export const Navbar = () => {
 					</li>
 				))}
 			</ul>
+			<div className='cart'>cart: 0</div>
 		</nav>
 	);
 };
