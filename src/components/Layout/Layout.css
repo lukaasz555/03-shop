@@ -1,3 +1,7 @@
 .layout__wrapper {
-	border: 1px solid #fab;
+	display: flex;
+	flex-direction: column;
+
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	padding: 1em;
 }

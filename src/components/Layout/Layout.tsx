@@ -1,3 +1,4 @@
+import { Navbar } from '../UI/Navbar/Navbar';
 import './Layout.css';
 
 interface LayoutProps {
@@ -5,5 +6,10 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-	return <div className='layout__wrapper'>{children}</div>;
+	return (
+		<div className='layout__wrapper'>
+			<Navbar />
+			{children}
+		</div>
+	);
 };
