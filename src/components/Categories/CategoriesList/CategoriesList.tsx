@@ -1,12 +1,13 @@
 import { CategoryCard } from '../CategoryCard/CategoryCard';
+import { useCategoriesList } from './useCategoriesList';
 import './CategoriesList.css';
 
-const mock = ['electronics', 'jewelery', "men's clothing", "women's clothing"];
-
 export const CategoriesList = () => {
+	const { categoriesList } = useCategoriesList();
+
 	return (
 		<div className='categories__list'>
-			{mock.map((c, idx) => (
+			{categoriesList.map((c, idx) => (
 				<CategoryCard key={idx} categoryName={c} />
 			))}
 		</div>
