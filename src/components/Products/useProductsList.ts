@@ -1,16 +1,26 @@
 import { useParams } from 'react-router-dom';
-import { categories } from '../../utils/constants/categories';
+import { useEffect, useState } from 'react';
+import { FakeStoreService } from '../../services/FakeStoreService';
+import { IProduct } from '../../interfaces/IProduct';
 
 export const useProductsList = () => {
+	const [productsList, setProductsList] = useState<IProduct[]>([]);
 	const { category } = useParams();
 
-	const printInfo = () => console.log('cat: ', category);
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const fakeStoreService = new FakeStoreService();
+				const res = category
+					? await fakeStoreService.getProductsByCategory(category)
+					: await fakeStoreService.getProducts();
+				setProductsList(res);
+			} catch (err) {
+				console.log('fetchProducts err ', err);
+			}
+		};
+		fetchProducts();
+	}, []);
 
-	if (!category || !categories.includes(category)) {
-		console.log('wrong category, should redirect');
-	} else {
-		console.log('should fetch products from ', category);
-	}
-
-	return { printInfo };
+	return { productsList };
 };
