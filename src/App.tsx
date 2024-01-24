@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Categories } from './pages/Categories';
-import { Products } from './pages/Products';
-import { Home } from './pages/Home';
+import { Categories } from './views/shop/Categories';
+import { Products } from './views/shop/Products';
+import { Home } from './views/shop/Home';
 import './App.css';
-import { Contact } from './pages/Contact';
+import { Contact } from './views/shop/Contact';
 
 function App() {
 	return (
