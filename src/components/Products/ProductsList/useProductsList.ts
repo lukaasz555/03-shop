@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { FakeStoreService } from '../../services/FakeStoreService';
-import { IProduct } from '../../interfaces/IProduct';
+import { FakeStoreService } from '../../../services/FakeStoreService';
+import { IProduct } from '../../../interfaces/IProduct';
 
 export const useProductsList = () => {
 	const [productsList, setProductsList] = useState<IProduct[]>([]);

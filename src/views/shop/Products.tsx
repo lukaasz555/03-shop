@@ -1,5 +1,5 @@
 import { Layout } from '../../components/Layout/Layout';
-import { ProductsList } from '../../components/Products/ProductsList';
+import { ProductsList } from '../../components/Products/ProductsList/ProductsList';
 
 export const Products = () => {
 	return (
