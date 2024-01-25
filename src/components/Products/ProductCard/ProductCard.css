@@ -11,12 +11,13 @@
 }
 
 header {
-	height: 70%;
+	height: 80%;
 	width: 100%;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
 
 img {
@@ -35,16 +36,25 @@ img {
 .card__details--top {
 	display: flex;
 	flex-direction: column;
+	gap: 5px;
 	text-align: left;
-	padding: 0 0.5em;
+	padding: 1em 0.75em;
+	overflow: hidden;
 }
 
-.card__details--top > h3 {
-	font-size: 16px;
-}
+.card__details--top > h3,
 .card__details--top > h4 {
-	font-size: 14px;
-	font-weight: 300;
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: 600;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.card__details--top > h4 {
+	font-size: 18px;
+	cursor: default;
 }
 
 .card__details--bottom {
@@ -56,9 +66,4 @@ img {
 	width: 100%;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
-}
-
-header,
-h3 {
-	cursor: pointer;
 }

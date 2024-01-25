@@ -8,10 +8,10 @@ export const mainRoutes: MainRoute[] = [
 		path: '/',
 		text: 'Home',
 	},
-	// {
-	// 	path: '/products',
-	// 	text: 'Products',
-	// },
+	{
+		path: '/products',
+		text: 'Products',
+	},
 	{
 		path: '/categories',
 		text: 'Categories',

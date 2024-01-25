@@ -14,7 +14,7 @@ export const ProductCard = ({ id, price, title, image }: ProductCardProps) => {
 			<section className='card__details'>
 				<div className='card__details--top'>
 					<h3 onClick={pushToProductPage}>{title}</h3>
-					<h4>{price}</h4>
+					<h4>${price}</h4>
 				</div>
 				<div className='card__details--bottom'>
 					<button>to cart</button>
