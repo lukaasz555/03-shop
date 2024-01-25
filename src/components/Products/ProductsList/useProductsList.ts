@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { FakeStoreService } from '../../../services/FakeStoreService';
 import { IProduct } from '../../../interfaces/IProduct';
+import { ProductsService } from '../../../services/FakeStore/Products/ProductsService';
 
 export const useProductsList = () => {
 	const [productsList, setProductsList] = useState<IProduct[]>([]);
@@ -10,10 +10,10 @@ export const useProductsList = () => {
 	useEffect(() => {
 		const fetchProducts = async () => {
 			try {
-				const fakeStoreService = new FakeStoreService();
+				const productService = new ProductsService();
 				const res = category
-					? await fakeStoreService.getProductsByCategory(category)
-					: await fakeStoreService.getProducts();
+					? await productService.getProductsByCategory(category)
+					: await productService.getProducts();
 				setProductsList(res);
 			} catch (err) {
 				console.log('fetchProducts err ', err);

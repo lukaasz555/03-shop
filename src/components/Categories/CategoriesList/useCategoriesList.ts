@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FakeStoreService } from '../../../services/FakeStoreService';
+import { CategoriesService } from '../../../services/FakeStore/Categories/CategoriesService';
 
 export const useCategoriesList = () => {
 	const [categoriesList, setCategoriesList] = useState<string[]>([]);
@@ -7,8 +7,8 @@ export const useCategoriesList = () => {
 	useEffect(() => {
 		const fetchCategories = async () => {
 			try {
-				const fakeStoreService = new FakeStoreService();
-				const res = await fakeStoreService.getCategories();
+				const categoriesService = new CategoriesService();
+				const res = await categoriesService.getCategories();
 				setCategoriesList(res);
 			} catch (err) {
 				console.log('fetchCategories err ', err);
