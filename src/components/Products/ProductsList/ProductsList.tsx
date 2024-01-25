@@ -1,11 +1,12 @@
 import { useProductsList } from './useProductsList';
 import { ProductCard } from '../ProductCard/ProductCard';
+import './ProductsList.css';
 
 export const ProductsList = () => {
 	const { productsList } = useProductsList();
 
 	return (
-		<div>
+		<div className='list__container'>
 			{productsList.map(
 				({ id, price, title, description, rating, category, image }) => (
 					<ProductCard
