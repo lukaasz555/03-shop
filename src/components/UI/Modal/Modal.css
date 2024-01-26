@@ -1,0 +1,64 @@
+.modal__overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal__content {
+	display: flex;
+	flex-direction: column;
+	background: #d5d4d4;
+	padding: 0;
+	width: 80%;
+	min-width: 250px;
+	max-width: 600px;
+	min-height: 200px;
+	max-height: 800px;
+	height: 80%;
+	box-sizing: border-box;
+}
+
+.modal__content > * {
+	box-sizing: inherit;
+}
+
+.modal__content header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: auto;
+	margin-bottom: 1em;
+	padding: 1em 1.5em;
+}
+.modal__content > header > h2 {
+	font-size: 34px;
+	color: #383838;
+}
+
+.modal__content > header > button {
+	padding: 0;
+	margin: 0;
+	padding: 10px;
+	border-radius: 0;
+	height: 30px;
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	background: transparent;
+	color: #383838;
+	border: 1px solid;
+}
+
+.modal__content > main {
+	flex-grow: 1;
+	padding: 1em 1.5em;
+}
