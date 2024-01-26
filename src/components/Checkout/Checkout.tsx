@@ -1,5 +1,15 @@
 import './Checkout.css';
+import { useCheckout } from './useCheckout';
 
 export const Checkout = () => {
-	return <div>checkout...</div>;
+	const { itemsInCart } = useCheckout();
+	return (
+		<div>
+			{itemsInCart.map(({ item, quantity }) => (
+				<div key={item.id}>
+					{item.title} - {quantity}
+				</div>
+			))}
+		</div>
+	);
 };
