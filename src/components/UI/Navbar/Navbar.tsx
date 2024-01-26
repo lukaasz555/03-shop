@@ -1,4 +1,5 @@
 import { mainRoutes } from '../../../utils/constants/mainRoutes';
+import { CartCounter } from '../CartCounter/CartCounter';
 import './Navbar.css';
 
 export const Navbar = () => {
@@ -11,7 +12,7 @@ export const Navbar = () => {
 					</li>
 				))}
 			</ul>
-			<div className='cart'>cart: 0</div>
+			<CartCounter />
 		</nav>
 	);
 };
