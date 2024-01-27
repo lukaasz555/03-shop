@@ -43,6 +43,7 @@ const cartSlice = createSlice({
 			if (itemInCartIndex > -1) {
 				state.cartItems[itemInCartIndex].quantity--;
 			}
+			state.cartItems = state.cartItems.filter((x) => x.quantity > 0);
 		},
 
 		setCartItems: (state: CartState, action: PayloadAction<CartItem[]>) => {

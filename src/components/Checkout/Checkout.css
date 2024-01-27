@@ -1,0 +1,17 @@
+.items__container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.checkout__info {
+	display: flex;
+	justify-content: center;
+	margin-top: 3em;
+}
+
+.checkout__info p {
+	font-size: 38px;
+	color: #38383890;
+	font-weight: 600;
+}

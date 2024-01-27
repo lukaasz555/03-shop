@@ -1,29 +1,21 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { IProduct } from '../../interfaces/IProduct';
-import { getItemCartQuantity } from '../../utils/helpers/getItemCartQuantity';
-
-interface CheckoutItem {
-	item: IProduct;
-	quantity: number;
-}
+import { useCartLocalStorage } from '../../utils/helpers/useCartLocalStorage';
+import { useEffect, useState } from 'react';
 
 export const useCheckout = () => {
-	const cartItems = useSelector(
+	const [isCardEmpty, setCardEmpty] = useState(false);
+
+	const itemsInCart = useSelector(
 		(state: RootState) => state.cartReducer.cartItems
 	);
 
-	const itemsInCart: CheckoutItem[] = [];
-	const itemsIds = [...new Set(cartItems.map((x) => x.id))];
+	const { saveCartToLs } = useCartLocalStorage();
 
-	itemsIds.forEach((x) => {
-		const item = cartItems.find(({ id }) => id === x) as IProduct;
-		const quantity = getItemCartQuantity(item.id);
-		itemsInCart.push({
-			item,
-			quantity,
-		});
-	});
+	useEffect(() => {
+		saveCartToLs();
+		setCardEmpty(itemsInCart.length < 1);
+	}, [itemsInCart]);
 
-	return { itemsInCart };
+	return { itemsInCart, isCardEmpty };
 };
