@@ -6,6 +6,10 @@ export class ProductsService extends FakeStoreService {
 		return this.getData<IProduct[]>('/products');
 	}
 
+	getProductById(productId: number): Promise<IProduct> {
+		return this.getData<IProduct>(`/products/${productId}`);
+	}
+
 	getProductsByCategory(categoryName: string): Promise<IProduct[]> {
 		return this.getData<IProduct[]>(`/products/category/${categoryName}`);
 	}
