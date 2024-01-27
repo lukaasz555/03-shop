@@ -12,10 +12,10 @@ export const useCartCounter = () => {
 	const items = useSelector((state: RootState) => state.cartReducer.cartItems);
 
 	useEffect(() => {
-		setCircleText(
-			items.length > 9 ? '9+' : items.length > 0 ? `${items.length}` : ''
-		);
-		setCircleVisible(items.length > 0);
+		const itemsQty = items.reduce((acc, curr) => acc + curr.quantity, 0);
+
+		setCircleText(itemsQty > 9 ? '9+' : itemsQty > 0 ? `${itemsQty}` : '');
+		setCircleVisible(itemsQty > 0);
 	}, [items]);
 
 	return { isCircleVisible, onCartClick, circleText };
