@@ -7,7 +7,6 @@ interface CartItem {
 }
 
 interface CartState {
-	// cartItems: IProduct[];
 	cartItems: CartItem[];
 	totalValue: number;
 	discount: number;
@@ -45,8 +44,13 @@ const cartSlice = createSlice({
 				state.cartItems[itemInCartIndex].quantity--;
 			}
 		},
+
+		setCartItems: (state: CartState, action: PayloadAction<CartItem[]>) => {
+			state.cartItems = action.payload;
+		},
 	},
 });
 
-export const { clearCart, addItem, removeItem } = cartSlice.actions;
+export const { clearCart, addItem, removeItem, setCartItems } =
+	cartSlice.actions;
 export default cartSlice.reducer;
