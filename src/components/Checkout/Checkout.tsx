@@ -3,7 +3,8 @@ import { CheckoutItem } from './CheckoutItem/CheckoutItem';
 import './Checkout.css';
 
 export const Checkout = () => {
-	const { itemsInCart, isCardEmpty, totalValue, discount } = useCheckout();
+	const { itemsInCart, isCardEmpty, totalValue, discount, resetCart } =
+		useCheckout();
 
 	return isCardEmpty ? (
 		<div className='checkout__info'>
@@ -25,7 +26,12 @@ export const Checkout = () => {
 					<span>Discount: </span>
 					<h4>${discount.toFixed(2)}</h4>
 				</div>
-				<button>submit</button>
+				<div className='summary--action'>
+					<button className='alt' onClick={resetCart}>
+						reset cart
+					</button>
+					<button className='cta'>submit</button>
+				</div>
 			</div>
 		</div>
 	);
