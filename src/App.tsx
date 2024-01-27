@@ -17,6 +17,10 @@ function App() {
 						<Route path='/categories' element={<Categories />} />
 						<Route path='/products/:category' element={<Products />} />
 						<Route path='/products' element={<Products />} />
+						<Route
+							path='/product/:id'
+							element={<div>product page goes here</div>}
+						/>
 						<Route path='/contact' element={<Contact />} />
 					</Routes>
 				</BrowserRouter>

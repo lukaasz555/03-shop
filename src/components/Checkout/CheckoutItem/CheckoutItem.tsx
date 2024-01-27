@@ -13,7 +13,7 @@ export const CheckoutItem = ({ item, quantity }: CheckoutItemProps) => {
 	return (
 		<div key={item.id} className='item__container'>
 			<div className='item__details'>
-				<p>{item.title}</p>
+				<a href={`/product/${item.id}`}>{item.title}</a>
 			</div>
 			<div className='item__tools'>
 				<button onClick={removeFromCart}>-</button>
